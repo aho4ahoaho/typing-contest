@@ -2,3 +2,7 @@ p{
     text-align: center;
     margin: auto;
 }
+p:nth-child(odd){
+    background-color: gray;
+    color: white;
+}
