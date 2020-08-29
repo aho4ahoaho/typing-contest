@@ -17,8 +17,8 @@ function romanconvert(kana) {
         'せ': 'se',
         'そ': 'so',
         'た': 'ta',
-        'ち': 'chi',
-        'つ': 'tsu',
+        'ち': 'ti',
+        'つ': 'tu',
         'て': 'te',
         'と': 'to',
         'な': 'na',
@@ -180,7 +180,9 @@ function romanconvert(kana) {
                 }
             } else if (null != kana.charAt(i).match(/^[ん]$/) && null != kana.charAt(i + 1).match(/^[あいうえおなにぬねの]$/)) {
                 keycode += "nn";
-            } else {
+            } else if(null != kana.charAt(i).match(/\w/)){
+                keycode += kana.charAt(i);
+            }else {
                 keycode += romanMap[kana.charAt(i)];
             }
         } else {

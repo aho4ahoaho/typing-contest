@@ -7,9 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p id="word"></p>
-    <p id="yomi"></p>
-    <p id="input"></p>
+    <div id="title" class="visible">
+        <div>
+            <p>ZatsuTyping</p>
+            <input type="button" onclick="gamestart()" value="Start">
+        </div>
+    </div>
+    <div id="screen">
+        <div id="">
+            <div><p id="word"></p></div>
+            <div><p id="yomi"></p></div>
+            <div><p id="count"></p></div>
+            <div><p id="input"></p></div>
+        </div>
+    </div>
 </body>
 <script src="./roman.js"></script>
 <script src="./words.js"></script>

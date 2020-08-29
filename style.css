@@ -1,8 +1,69 @@
-p{
-    text-align: center;
-    margin: auto;
+body{
+    margin: 0px;
 }
-p:nth-child(odd){
+#title{
+    text-align: center;
+    vertical-align: middle;
+    height: 100vh;
+    background-color: tomato;
+    font-size: 0px;
+}
+#title:not(.hidden) div{
+    display: inline-block;
+    margin-top:calc(50vh - 10vmax - 10vh);
+}
+#title:not(.hidden) p{
+    font-size: 10vmax;
+    margin: 5vh;
+    cursor: default;
+}
+#title:not(.hidden) input[type=button]{
+    height: 10vmax;
+    width: 20vmax;
+    border: 1px solid black;
+    border-radius: 1vh;
+    font-size: 5vmax;
+    text-align: center;
+}
+div#title.hidden{
+    height: 0px;
+    visibility: hidden;
+}div#title.hidden *{
+    height: 0px;
+    visibility: hidden;
+}
+div#screen{
+    height: 100vh;
+    background-color: teal;
+    font-size: 0px;
+    text-align: center;
+}
+div#screen>div{
+    display: inline-block;
+    margin: 20vh auto;
+    margin-top: 20vh;
+    width: 100%;
+    max-width: 30cm ;
+    font-size: medium;
+    vertical-align: middle;
+}
+div#screen > div > div{
+    display: table;
+    width: 100%;
+    height: 10vh;
+    font-size: 5vh;
+    background-color: white;
+    text-align: center;
+}
+div#screen > div > div:nth-child(3){
+    background-color: transparent;
+    height: 30vh;
+    font-size: 15vh;
+    margin: 0px;
+}
+div#screen > div >div:nth-child(4){
     background-color: gray;
-    color: white;
+}div#screen >div > div > p{
+    display: table-cell;
+    vertical-align: middle;
 }
