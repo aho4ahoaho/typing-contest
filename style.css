@@ -79,6 +79,9 @@ div#screen:not(.hidden) > div > div{
     background-color: white;
     text-align: center;
 }
+div#screen:not(.hidden) > div > div:nth-child(2){
+    border-top: solid;
+}
 div#screen:not(.hidden) > div > div:nth-child(3){
     background-color: transparent;
     height: 30vh;
