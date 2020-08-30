@@ -1,29 +1,51 @@
 body{
     margin: 0px;
+    overflow: hidden;
+    user-select: none;
 }
+
 #title{
     text-align: center;
     vertical-align: middle;
     height: 100vh;
-    background-color: tomato;
+    background-color: rgb(255,70, 60);
     font-size: 0px;
+    transition: 0.5s;
 }
 #title:not(.hidden) div{
     display: inline-block;
     margin-top:calc(50vh - 10vmax - 10vh);
 }
-#title:not(.hidden) p{
+#title:not(.hidden) p:nth-child(1){
+    height: 12vmax;
     font-size: 10vmax;
     margin: 5vh;
     cursor: default;
+    transition: 1s ease-in-out;
+}
+#title:not(.hidden) p:nth-child(3){
+    font-size: 3vmax;
+    margin: 0px;
+    cursor: default;
+    transition: 1s ease-in-out;
+    user-select: none;
+}
+#title:not(.hidden) p:active{
+    transform: rotateY(180deg);
 }
 #title:not(.hidden) input[type=button]{
-    height: 10vmax;
-    width: 20vmax;
+    height: 9vmax;
+    width: 18vmax;
     border: 1px solid black;
     border-radius: 1vh;
     font-size: 5vmax;
     text-align: center;
+    transition: 0.2s;
+    background-color: white;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.4);
+}
+#title:not(.hidden) input[type=button]:hover{
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.6);
 }
 div#title.hidden{
     height: 0px;
@@ -37,17 +59,17 @@ div#screen{
     background-color: teal;
     font-size: 0px;
     text-align: center;
+    transition: 0.5s;
 }
-div#screen>div{
+div#screen:not(.hidden)>div{
     display: inline-block;
     margin: 20vh auto;
-    margin-top: 20vh;
     width: 100%;
     max-width: 30cm ;
     font-size: medium;
     vertical-align: middle;
 }
-div#screen > div > div{
+div#screen:not(.hidden) > div > div{
     display: table;
     width: 100%;
     height: 10vh;
@@ -55,15 +77,89 @@ div#screen > div > div{
     background-color: white;
     text-align: center;
 }
-div#screen > div > div:nth-child(3){
+div#screen:not(.hidden) > div > div:nth-child(3){
     background-color: transparent;
     height: 30vh;
     font-size: 15vh;
     margin: 0px;
 }
-div#screen > div >div:nth-child(4){
+
+div#screen:not(.hidden) > div >div:nth-child(4){
     background-color: gray;
-}div#screen >div > div > p{
+}div#screen:not(.hidden) >div > div > p{
     display: table-cell;
     vertical-align: middle;
+}
+div#screen.hidden{
+    height:0px;
+    visibility: hidden;
+}
+div#screen.hidden *{
+    height:0px;
+    font-size: 0px;
+    margin: 0px;
+    visibility: hidden;
+}
+div#result{
+    width: 100%;
+    height: 100vh;
+    background-color: #FF8500;
+    font-size: 0;
+    text-align: center;
+    transition: 0.5s;
+}
+div#result:not(.hidden)>div{
+    display: inline-block;
+    margin: 20vh 0px;
+    font-size: medium;
+}
+div#result:not(.hidden)>div>div{
+    margin: 5vh  0px;
+}
+div#result:not(.hidden) div>p:nth-child(1){
+    height: 5vh;
+    font-size: 3vh;
+    margin: 0px;
+}
+div#result:not(.hidden) div>p:nth-child(2){
+    margin:0px;
+    height: 15vh;
+    font-size: 10vh;
+}
+div#result:not(.hidden) table{
+    width: 75vw;
+    max-width: 30cm; ;
+    border-collapse: collapse;
+    margin: 5vh 0px;
+}
+div#result:not(.hidden) table td{
+    height: 5vmin;
+    width: calc(100% / 3);
+    border: solid;
+    font-size: 3vmin;
+}
+div#result:not(.hidden) input{
+    height: 6vmax;
+    width: 12vmax;
+    border: 1px solid black;
+    border-radius: 1vh;
+    font-size: 3vmax;
+    transition: 0.2s;
+    background-color: white;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.4);
+}
+div#result:not(.hidden) input[type=button]:hover{
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.6);
+}
+div#result.hidden{
+    height:0px;
+    visibility: hidden;
+}
+div#result.hidden *{
+    display: inline;
+    height:0px;
+    visibility: hidden;
+    margin: 0px;
+    padding: 0px;
+    border:0px;
 }

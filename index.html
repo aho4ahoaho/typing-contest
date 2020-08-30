@@ -8,18 +8,40 @@
 </head>
 <body>
     <div id="title" class="visible">
-        <div>
+        <div id="menu">
             <p>ZatsuTyping</p>
             <input type="button" onclick="gamestart()" value="Start">
+            <p id="highscore"></p>
         </div>
     </div>
-    <div id="screen">
+    <div id="screen" class="hidden">
         <div id="">
             <div><p id="word"></p></div>
             <div><p id="yomi"></p></div>
             <div><p id="count"></p></div>
             <div><p id="input"></p></div>
         </div>
+    </div>
+    <div id="result" class="hidden">
+        <div>
+            <div>
+                <p>スコア</p>
+                <p id="score">1000</p>
+            </div>
+            <table>
+                <tr>
+                    <td>キースピード</td>
+                    <td>キータイプ数</td>
+                    <td>タイム</td>
+                </tr>
+                <tr>
+                    <td id="keyspeed">0.0key/s</td>
+                    <td id="typecount">00key</td>
+                    <td id="time">00.0000s</td>
+                </tr>
+            </table>
+            <input type="button" value="Restart" onclick="restart()">
+            <input type="button" value="Tweet" onclick="share(this.value)">
     </div>
 </body>
 <script src="./roman.js"></script>
