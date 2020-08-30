@@ -32,7 +32,7 @@ function nextword() {
 
     wordtext.innerHTML = word;
     wordtext.style.fontSize =autofontsize(wordtext.offsetWidth,word.length);
-    yomitext.innerHTML = yomi;
+    yomitext.innerHTML = keycode.charAt(0);
     yomitext.style.fontSize =autofontsize(yomitext.offsetWidth,yomi.length);
     document.getElementById("input").innerText = "";
     
@@ -47,8 +47,11 @@ function check(eventkey) {
             nextkey = keycode.charAt(charnumber);
 
             const inputtext = document.getElementById("input")
+            const yomitext = document.getElementById("yomi")
             inputtext.insertAdjacentText("beforeend", eventkey);
             inputtext.style.fontSize = autofontsize(inputtext.offsetWidth,inputtext.innerText.length);
+            yomitext.insertAdjacentText("beforeend", nextkey);
+            yomitext.style.fontSize = autofontsize(yomitext.offsetWidth,yomitext.innerText.length);
         } else if (charnumber == keycode.length - 1) {
             if(count != volume){
                 nextword();
