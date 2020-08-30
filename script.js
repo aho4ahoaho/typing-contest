@@ -1,6 +1,3 @@
-
-
-
 let keycode = "";
 let nextkey = "";
 let charnumber = 0;
@@ -76,11 +73,11 @@ function check(eventkey) {
                 //ハイスコア処理
                 if (localStorage.getItem("highscore") == null) {
                     localStorage.setItem("highscore", score);
-                    console.log("HighScore")
+                    document.getElementById(highscore_result).innerText = "ハイスコア!"
                 } else if (localStorage.getItem("highscore") < score) {
                     localStorage.removeItem("highscore");
                     localStorage.setItem("highscore", score)
-                    console.log("highscore")
+                    document.getElementById(highscore_result).innerText = "ハイスコア!"
                 }
 
                 //リザルト画面遷移
