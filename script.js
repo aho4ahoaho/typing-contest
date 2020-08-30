@@ -5,6 +5,7 @@ let keycode = "";
 let nextkey = "";
 let charnumber = 0;
 let count = 0;
+let volume = 10;
 let keycount=0;
 let misskey =0;
 let starttime;
@@ -40,7 +41,7 @@ function nextword() {
 }
 
 function check(eventkey) {
-    if (nextkey == eventkey && count <= 3) {
+    if (nextkey == eventkey && count <= volume) {
         if (charnumber < keycode.length - 1) {
             charnumber++;
             nextkey = keycode.charAt(charnumber);
@@ -49,7 +50,7 @@ function check(eventkey) {
             inputtext.insertAdjacentText("beforeend", eventkey);
             inputtext.style.fontSize = autofontsize(inputtext.offsetWidth,inputtext.innerText.length);
         } else if (charnumber == keycode.length - 1) {
-            if(count != 3){
+            if(count != volume){
                 nextword();
             }else{
                 stoptime = new Date();
@@ -58,7 +59,7 @@ function check(eventkey) {
         
                 document.getElementById("score").innerText = Math.round(score);
                 document.getElementById("keyspeed").innerText = Math.round(keycount / (time / 1000) *10) / 10 + "key/s";
-                document.getElementById("typecount").innerText = keycount;
+                document.getElementById("typecount").innerText = keycount + "key";
                 document.getElementById("time").innerText = time/1000 + "s";
 
 
@@ -118,6 +119,29 @@ function share(service){
     console.log(service)
     if(service == "Tweet"){
         window.open("http://twitter.com/share?"+"url="+location.href+"&text=スコア:"+document.getElementById("score").innerText+"("+document.getElementById("keyspeed").innerText+","+document.getElementById("typecount").innerText+","+document.getElementById("time").innerText+")");
+    }
+}
+
+function traning(){
+    const highscore = document.getElementById("highscore");
+    if(highscore.innerText != "修行モード"){
+        volume = 100;
+        highscore.animate([{transform:"rotateY(0deg)",opacity:"1"},{transform:"rotateY(360deg)",opacity:"0"}],1000);
+        highscore.style.opacity = 0;
+        document.getElementById("title").style.backgroundColor = "#600";
+        document.getElementById("title").style.color="white";
+        setTimeout(()=>{highscore.innerText = "修行モード";
+        highscore.style.opacity = 1;
+        highscore.animate([{transform:"rotateY(360deg)",opacity:"0"},{transform:"rotateY(720deg)",opacity:"1"}],1000);},1000);
+    }else{
+        volume = 10;
+        highscore.animate([{transform:"rotateY(720deg)",opacity:"1"},{transform:"rotateY(360deg)",opacity:"0"}],1000);
+        highscore.style.opacity = 0;
+        document.getElementById("title").style.backgroundColor = "rgb(255,70, 60)"
+        document.getElementById("title").style.color="black";
+        setTimeout(()=>{highscore.innerText = "通常モード";
+        highscore.style.opacity = 1;
+        highscore.animate([{transform:"rotateY(360deg)",opacity:"0"},{transform:"rotateY(0deg)",opacity:"1"}],1000);},1000);
     }
 }
 

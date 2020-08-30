@@ -23,16 +23,17 @@ body{
     cursor: default;
     transition: 1s ease-in-out;
 }
-#title:not(.hidden) p:nth-child(3){
-    font-size: 3vmax;
-    margin: 0px;
-    cursor: default;
-    transition: 1s ease-in-out;
-    user-select: none;
-}
-#title:not(.hidden) p:active{
+#title:not(.hidden) p:nth-child(1):active{
     transform: rotateY(180deg);
 }
+#title:not(.hidden) p:nth-child(3){
+    font-size: 3vmax;
+    margin: 1vmax 0px;
+    cursor: pointer;
+    transition: 1s ease-in;
+    user-select: none;
+}
+
 #title:not(.hidden) input[type=button]{
     height: 9vmax;
     width: 18vmax;
@@ -43,6 +44,7 @@ body{
     transition: 0.2s;
     background-color: white;
     box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
 }
 #title:not(.hidden) input[type=button]:hover{
     box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.6);
@@ -144,6 +146,7 @@ div#result:not(.hidden) input{
     border: 1px solid black;
     border-radius: 1vh;
     font-size: 3vmax;
+    cursor: pointer;
     transition: 0.2s;
     background-color: white;
     box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.4);
