@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 </head>
+
 <body>
     <div id="title" class="visible">
         <div id="menu">
@@ -24,10 +26,18 @@
     </div>
     <div id="screen" class="hidden">
         <div id="">
-            <div><p id="word"></p></div>
-            <div><p id="yomi"></p></div>
-            <div><p id="count"></p></div>
-            <div><p id="input"></p></div>
+            <div>
+                <p id="word"></p>
+            </div>
+            <div>
+                <p id="yomi"></p>
+            </div>
+            <div>
+                <p id="count"></p>
+            </div>
+            <div>
+                <p id="input"></p>
+            </div>
         </div>
     </div>
     <div id="result" class="hidden">
@@ -50,9 +60,10 @@
             </table>
             <input type="button" value="Restart" onclick="restart()">
             <input type="button" value="Tweet" onclick="share(this.value)">
-    </div>
+        </div>
 </body>
 <script src="./roman.js" defer></script>
 <script src="./words.js" defer></script>
 <script src="./script.js" defer></script>
+
 </html>

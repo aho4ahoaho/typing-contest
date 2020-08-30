@@ -180,9 +180,9 @@ function romanconvert(kana) {
                 }
             } else if (null != kana.charAt(i).match(/^[ん]$/) && null != kana.charAt(i + 1).match(/^[あいうえおなにぬねの]$/)) {
                 keycode += "nn";
-            } else if(null != kana.charAt(i).match(/\w/)){
+            } else if (null != kana.charAt(i).match(/\w/)) {
                 keycode += kana.charAt(i);
-            }else {
+            } else {
                 keycode += romanMap[kana.charAt(i)];
             }
         } else {
